@@ -9,20 +9,42 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.83
+    @State var currentDragOffsetY: CGFloat = 0
+    @State var endingOffsetY: CGFloat = 0
 
     var body: some View {
         ZStack{
             Color.green.ignoresSafeArea()
             CategoriesControlView()
+                .offset(y: startingOffsetY)
+                .offset(y: currentDragOffsetY)
+                .offset(y: endingOffsetY)
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            withAnimation(.spring()){
+                                currentDragOffsetY = value.translation.height
+                            }
+                        }
+                        .onEnded { value in
+                            withAnimation(.spring()){
+                                if currentDragOffsetY < -150 {
+                                    endingOffsetY = -startingOffsetY
+                                }
+                                else if endingOffsetY != 0 && currentDragOffsetY > 150 {
+                                    endingOffsetY = 0
+                                }
+                                currentDragOffsetY = 0
+                            }
+                        }
+            )
             
         }.ignoresSafeArea(edges:.bottom)
         
         
     }
-
-
- 
-    
     
 }
 
