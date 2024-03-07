@@ -10,30 +10,58 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-        entity: Category.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)],
-        animation: .default)
-    private var categories: FetchedResults<Category>
+        @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+        @State private var showingAddCategoryView = false
+        @State private var newCategoryName = ""
 
-    
+    @State private var showingUpdateSheet = false
+    @State private var newName = ""
+    @State private var categoryToEdit: Category?
+
     var body: some View {
-            NavigationView {
-                List {
-                    ForEach(categories, id: \.self) { category in
-                        Text(category.categoryName ?? "Unknown Category")
-                    }.onDelete(perform: deleteCategories)
+        NavigationView {
+            List {
+                ForEach(categories, id: \.self) { category in
+                    Text(category.categoryName ?? "Unknown Category")
+                        .onTapGesture {
+                            self.categoryToEdit = category
+                            self.newName = category.categoryName ?? ""
+                            self.showingUpdateSheet = true
+                        }
                 }
-                .toolbar {
-                    Button("Add Categories") {
-                        addCategory(name: "Electronics")
-                        addCategory(name: "Drinks")
-                        addCategory(name: "Dessert")
+                .onDelete(perform: deleteCategories)
+            }
+            .toolbar {
+                Button("Add Categories") {
+                    self.showingAddCategoryView = true
+                }
+            }
+            .sheet(isPresented: $showingUpdateSheet) {
+                NavigationView {
+                    VStack {
+                        TextField("Update Category Name", text: $newName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        Button("Update") {
+                            if let category = self.categoryToEdit {
+                                self.updateCategory(category: category, newName: self.newName)
+                            }
+                            self.showingUpdateSheet = false
+                        }
+                        .padding()
+                    }
+                    .navigationTitle("Update Category")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button("Cancel") {
+                                self.showingUpdateSheet = false
+                            }
+                        }
                     }
                 }
             }
         }
+    }
 
         private func addCategory(name: String) {
             withAnimation {
