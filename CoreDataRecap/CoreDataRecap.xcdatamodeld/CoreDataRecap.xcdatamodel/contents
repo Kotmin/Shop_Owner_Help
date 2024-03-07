@@ -16,6 +16,7 @@
         <relationship name="describeMetaData" toMany="YES" deletionRule="Nullify" destinationEntity="MetaData" inverseName="getDescription" inverseEntity="MetaData"/>
     </entity>
     <entity name="Product" representedClassName=".Product" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="categories" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category"/>
