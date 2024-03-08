@@ -234,27 +234,90 @@ struct ProductListView: View {
     }
 }
 
-// Use this structure to display each product.
+
 struct ProductView: View {
     let product: Product
 
     var body: some View {
-        VStack {
-            // Here you'd load the image using the 'product.image' property.
-//            Text("\(product.image)")
-            Image(product.image!).resizable().scaledToFit().padding(.trailing, -50)
-            // 13:30
+        VStack(alignment: .leading) {
+            Image(product.image ?? "placeholder_image") // Replace with your placeholder image name
+                .resizable()
+                .scaledToFill()
+                .frame(width: 175, height: 150) // Set your desired fixed frame size
+                .clipped() // This will clip the overflow of the image
+                .cornerRadius(15)
+                .overlay(
+                    HStack {
+                        Text(product.categories?.categoryName ?? "Category")
+                            .font(.caption)
+                            .padding(5)
+                            .background(Color.blue) // Set your desired background color
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                        Spacer()
+                    }
+                    .padding([.top, .leading]), alignment: .topLeading
+                )
+
             Text(product.name ?? "Unnamed Product")
                 .bold()
             Text("$\(product.price, specifier: "%.2f")")
-                .foregroundColor(.secondary)
+                .foregroundColor(.secondary).padding(.leading)
         }
         .padding()
+        .frame(width: 175, height: 200)
         .background(Color.white)
         .cornerRadius(15)
-        // Implement your own logic for handling taps, perhaps to update or delete products.
+        // handle gestures for update and delete
     }
 }
+
+//struct AddProductView: View {
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @Binding var isPresented: Bool
+//    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)]) private var categories: FetchedResults<Category>
+//    @State private var selectedCategory: Category?
+//    @State private var productName: String = ""
+//    @State private var productPrice: Double = 0.0
+//    @State private var productImage: String = ""
+//
+//    var body: some View {
+//        NavigationView {
+//            Form {
+//                TextField("Product Name", text: $productName)
+//                TextField("Product Price", value: $productPrice, formatter: NumberFormatter())
+//                TextField("Product Image", text: $productImage)
+//                
+//                Picker("Category", selection: $selectedCategory) {
+//                    ForEach(categories) { category in
+//                        Text(category.categoryName ?? "Unknown").tag(category as Category?)
+//                    }
+//                }
+//                
+//                Button("Save") {
+//                    let newProduct = Product(context: viewContext)
+//                    newProduct.name = productName
+//                    newProduct.price = productPrice
+//                    newProduct.image = productImage
+//                    selectedCategory?.addToProducts(newProduct)
+//
+//                    newProduct.categories = selectedCategory
+//
+//                    do {
+//                        try viewContext.save()
+//                        isPresented = false
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//            .navigationTitle("Add Product")
+//            .navigationBarItems(leading: Button("Dismiss") {
+//                isPresented = false
+//            })
+//        }
+//    }
+//}
 
 struct AddProductView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -262,29 +325,51 @@ struct AddProductView: View {
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)]) private var categories: FetchedResults<Category>
     @State private var selectedCategory: Category?
     @State private var productName: String = ""
-    @State private var productPrice: Double = 0.0
+    @State private var productPriceText: String = ""
     @State private var productImage: String = ""
+    @State private var isPriceValid: Bool = true
 
     var body: some View {
         NavigationView {
             Form {
                 TextField("Product Name", text: $productName)
-                TextField("Product Price", value: $productPrice, formatter: NumberFormatter())
-                TextField("Product Image", text: $productImage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
                 
+                TextField("Product Price", text: $productPriceText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)
+                    .background(isPriceValid ? Color.clear : Color.red.opacity(0.3))
+                    .onChange(of: productPriceText) { newValue in
+                        isPriceValid = Double(newValue) != nil
+                    }
+
+                if !isPriceValid {
+                    Text("Please enter a valid price")
+                        .font(.caption)
+                        .foregroundColor(.red)
+                }
+                
+                TextField("Product Image", text: $productImage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
+
                 Picker("Category", selection: $selectedCategory) {
                     ForEach(categories) { category in
                         Text(category.categoryName ?? "Unknown").tag(category as Category?)
                     }
                 }
-                
+
                 Button("Save") {
+                    guard let price = Double(productPriceText), price >= 0 else {
+                        isPriceValid = false
+                        return
+                    }
+                    
                     let newProduct = Product(context: viewContext)
                     newProduct.name = productName
-                    newProduct.price = productPrice
+                    newProduct.price = price
                     newProduct.image = productImage
-                    selectedCategory?.addToProducts(newProduct)
-
                     newProduct.categories = selectedCategory
 
                     do {
@@ -314,7 +399,3 @@ extension NSManagedObjectContext {
         }
     }
 }
-
-// Inside your ContentView, insert the ProductListView as needed.
-// ... Rest of your ContentView code ...
-
