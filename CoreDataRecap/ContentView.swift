@@ -21,7 +21,13 @@ struct ContentView: View {
         ZStack{
             Color.green.ignoresSafeArea()
             VStack{
-                Text("Owner Panel")
+                Text("Owner Panel").font(.headline).fontWeight(.semibold)
+                    .padding(9)
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                
+                
                 ProductListView()
                 Spacer()
             }
@@ -245,7 +251,7 @@ struct ProductView: View {
                 .scaledToFill()
                 .frame(width: 175, height: 150) // Set your desired fixed frame size
                 .clipped() // This will clip the overflow of the image
-                .cornerRadius(15)
+//                .cornerRadius(15)
                 .overlay(
                     HStack {
                         Text(product.categories?.categoryName ?? "Category")
