@@ -15,8 +15,16 @@ struct ContentView: View {
     @State var endingOffsetY: CGFloat = 0
 
     var body: some View {
+        NavigationView{
+            
+      
         ZStack{
             Color.green.ignoresSafeArea()
+            VStack{
+                Text("Owner Panel")
+                ProductListView()
+                Spacer()
+            }
             CategoriesControlView()
                 .offset(y: startingOffsetY)
                 .offset(y: currentDragOffsetY)
@@ -43,7 +51,7 @@ struct ContentView: View {
             
         }.ignoresSafeArea(edges:.bottom)
         
-        
+        }
     }
     
 }
@@ -197,3 +205,116 @@ private func deleteCategories(offsets: IndexSet) {
     
     
 }
+
+
+struct ProductListView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)],
+        animation: .default
+    ) private var products: FetchedResults<Product>
+    @State private var showingAddProduct = false
+
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                ForEach(products) { product in
+                    ProductView(product: product)
+                }
+            }
+        }
+        .sheet(isPresented: $showingAddProduct) {
+            AddProductView(isPresented: $showingAddProduct)
+        }
+        .navigationBarItems(trailing: Button(action: {
+            showingAddProduct = true
+        }) {
+            Text("Add Product")
+        })
+    }
+}
+
+// Use this structure to display each product.
+struct ProductView: View {
+    let product: Product
+
+    var body: some View {
+        VStack {
+            // Here you'd load the image using the 'product.image' property.
+//            Text("\(product.image)")
+            Image(product.image!).resizable().scaledToFit().padding(.trailing, -50)
+            // 13:30
+            Text(product.name ?? "Unnamed Product")
+                .bold()
+            Text("$\(product.price, specifier: "%.2f")")
+                .foregroundColor(.secondary)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(15)
+        // Implement your own logic for handling taps, perhaps to update or delete products.
+    }
+}
+
+struct AddProductView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @Binding var isPresented: Bool
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)]) private var categories: FetchedResults<Category>
+    @State private var selectedCategory: Category?
+    @State private var productName: String = ""
+    @State private var productPrice: Double = 0.0
+    @State private var productImage: String = ""
+
+    var body: some View {
+        NavigationView {
+            Form {
+                TextField("Product Name", text: $productName)
+                TextField("Product Price", value: $productPrice, formatter: NumberFormatter())
+                TextField("Product Image", text: $productImage)
+                
+                Picker("Category", selection: $selectedCategory) {
+                    ForEach(categories) { category in
+                        Text(category.categoryName ?? "Unknown").tag(category as Category?)
+                    }
+                }
+                
+                Button("Save") {
+                    let newProduct = Product(context: viewContext)
+                    newProduct.name = productName
+                    newProduct.price = productPrice
+                    newProduct.image = productImage
+                    selectedCategory?.addToProducts(newProduct)
+
+                    newProduct.categories = selectedCategory
+
+                    do {
+                        try viewContext.save()
+                        isPresented = false
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            .navigationTitle("Add Product")
+            .navigationBarItems(leading: Button("Dismiss") {
+                isPresented = false
+            })
+        }
+    }
+}
+
+extension NSManagedObjectContext {
+    func fetchAllCategories() -> [Category] {
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        do {
+            return try fetch(request)
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+    }
+}
+
+// Inside your ContentView, insert the ProductListView as needed.
+// ... Rest of your ContentView code ...
+
