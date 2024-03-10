@@ -18,6 +18,8 @@
 		1B98CCD22B9865AB0052EC24 /* CoreDataRecapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CCD12B9865AB0052EC24 /* CoreDataRecapTests.swift */; };
 		1B98CCDC2B9865AB0052EC24 /* CoreDataRecapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CCDB2B9865AB0052EC24 /* CoreDataRecapUITests.swift */; };
 		1B98CCDE2B9865AB0052EC24 /* CoreDataRecapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98CCDD2B9865AB0052EC24 /* CoreDataRecapUITestsLaunchTests.swift */; };
+		1BED24B32B9E27CD000FDB32 /* CategoryControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED24B22B9E27CD000FDB32 /* CategoryControlView.swift */; };
+		1BED24B52B9E2DCA000FDB32 /* FullScreenCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED24B42B9E2DCA000FDB32 /* FullScreenCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		1B98CCD72B9865AB0052EC24 /* CoreDataRecapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataRecapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B98CCDB2B9865AB0052EC24 /* CoreDataRecapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapUITests.swift; sourceTree = "<group>"; };
 		1B98CCDD2B9865AB0052EC24 /* CoreDataRecapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1BED24B22B9E27CD000FDB32 /* CategoryControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryControlView.swift; sourceTree = "<group>"; };
+		1BED24B42B9E2DCA000FDB32 /* FullScreenCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			children = (
 				1B5F6E402B9A5E55004886DE /* CollectionView.swift */,
 				1B5F6E432B9A6090004886DE /* Home.swift */,
+				1BED24B22B9E27CD000FDB32 /* CategoryControlView.swift */,
+				1BED24B42B9E2DCA000FDB32 /* FullScreenCategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 				1B98CCC82B9865AB0052EC24 /* CoreDataRecap.xcdatamodeld in Sources */,
 				1B5F6E412B9A5E55004886DE /* CollectionView.swift in Sources */,
 				1B98CCC52B9865AB0052EC24 /* Persistence.swift in Sources */,
+				1BED24B52B9E2DCA000FDB32 /* FullScreenCategoryView.swift in Sources */,
+				1BED24B32B9E27CD000FDB32 /* CategoryControlView.swift in Sources */,
 				1B98CCBE2B9865AA0052EC24 /* ContentView.swift in Sources */,
 				1B5F6E442B9A6090004886DE /* Home.swift in Sources */,
 				1B98CCBC2B9865AA0052EC24 /* CoreDataRecapApp.swift in Sources */,
