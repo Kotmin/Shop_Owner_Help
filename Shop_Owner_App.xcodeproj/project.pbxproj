@@ -42,16 +42,16 @@
 /* Begin PBXFileReference section */
 		1B5F6E402B9A5E55004886DE /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		1B5F6E432B9A6090004886DE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		1B98CCB82B9865AA0052EC24 /* CoreDataRecap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataRecap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B98CCB82B9865AA0052EC24 /* Shop_Owner_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop_Owner_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B98CCBB2B9865AA0052EC24 /* CoreDataRecapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapApp.swift; sourceTree = "<group>"; };
 		1B98CCBD2B9865AA0052EC24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B98CCBF2B9865AB0052EC24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B98CCC22B9865AB0052EC24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B98CCC42B9865AB0052EC24 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1B98CCC72B9865AB0052EC24 /* CoreDataRecap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataRecap.xcdatamodel; sourceTree = "<group>"; };
-		1B98CCCD2B9865AB0052EC24 /* CoreDataRecapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataRecapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B98CCCD2B9865AB0052EC24 /* Shop_Owner_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shop_Owner_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B98CCD12B9865AB0052EC24 /* CoreDataRecapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapTests.swift; sourceTree = "<group>"; };
-		1B98CCD72B9865AB0052EC24 /* CoreDataRecapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataRecapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B98CCD72B9865AB0052EC24 /* Shop_Owner_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Shop_Owner_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B98CCDB2B9865AB0052EC24 /* CoreDataRecapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapUITests.swift; sourceTree = "<group>"; };
 		1B98CCDD2B9865AB0052EC24 /* CoreDataRecapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecapUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1BED24B22B9E27CD000FDB32 /* CategoryControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryControlView.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		1B98CCB92B9865AA0052EC24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B98CCB82B9865AA0052EC24 /* CoreDataRecap.app */,
-				1B98CCCD2B9865AB0052EC24 /* CoreDataRecapTests.xctest */,
-				1B98CCD72B9865AB0052EC24 /* CoreDataRecapUITests.xctest */,
+				1B98CCB82B9865AA0052EC24 /* Shop_Owner_App.app */,
+				1B98CCCD2B9865AB0052EC24 /* Shop_Owner_AppTests.xctest */,
+				1B98CCD72B9865AB0052EC24 /* Shop_Owner_AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +156,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B98CCB72B9865AA0052EC24 /* CoreDataRecap */ = {
+		1B98CCB72B9865AA0052EC24 /* Shop_Owner_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B98CCE12B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecap" */;
+			buildConfigurationList = 1B98CCE12B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_App" */;
 			buildPhases = (
 				1B98CCB42B9865AA0052EC24 /* Sources */,
 				1B98CCB52B9865AA0052EC24 /* Frameworks */,
@@ -168,14 +168,14 @@
 			);
 			dependencies = (
 			);
-			name = CoreDataRecap;
+			name = Shop_Owner_App;
 			productName = CoreDataRecap;
-			productReference = 1B98CCB82B9865AA0052EC24 /* CoreDataRecap.app */;
+			productReference = 1B98CCB82B9865AA0052EC24 /* Shop_Owner_App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B98CCCC2B9865AB0052EC24 /* CoreDataRecapTests */ = {
+		1B98CCCC2B9865AB0052EC24 /* Shop_Owner_AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B98CCE42B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecapTests" */;
+			buildConfigurationList = 1B98CCE42B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_AppTests" */;
 			buildPhases = (
 				1B98CCC92B9865AB0052EC24 /* Sources */,
 				1B98CCCA2B9865AB0052EC24 /* Frameworks */,
@@ -186,14 +186,14 @@
 			dependencies = (
 				1B98CCCF2B9865AB0052EC24 /* PBXTargetDependency */,
 			);
-			name = CoreDataRecapTests;
+			name = Shop_Owner_AppTests;
 			productName = CoreDataRecapTests;
-			productReference = 1B98CCCD2B9865AB0052EC24 /* CoreDataRecapTests.xctest */;
+			productReference = 1B98CCCD2B9865AB0052EC24 /* Shop_Owner_AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1B98CCD62B9865AB0052EC24 /* CoreDataRecapUITests */ = {
+		1B98CCD62B9865AB0052EC24 /* Shop_Owner_AppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B98CCE72B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecapUITests" */;
+			buildConfigurationList = 1B98CCE72B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_AppUITests" */;
 			buildPhases = (
 				1B98CCD32B9865AB0052EC24 /* Sources */,
 				1B98CCD42B9865AB0052EC24 /* Frameworks */,
@@ -204,9 +204,9 @@
 			dependencies = (
 				1B98CCD92B9865AB0052EC24 /* PBXTargetDependency */,
 			);
-			name = CoreDataRecapUITests;
+			name = Shop_Owner_AppUITests;
 			productName = CoreDataRecapUITests;
-			productReference = 1B98CCD72B9865AB0052EC24 /* CoreDataRecapUITests.xctest */;
+			productReference = 1B98CCD72B9865AB0052EC24 /* Shop_Owner_AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1B98CCB32B9865AA0052EC24 /* Build configuration list for PBXProject "CoreDataRecap" */;
+			buildConfigurationList = 1B98CCB32B9865AA0052EC24 /* Build configuration list for PBXProject "Shop_Owner_App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -245,9 +245,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B98CCB72B9865AA0052EC24 /* CoreDataRecap */,
-				1B98CCCC2B9865AB0052EC24 /* CoreDataRecapTests */,
-				1B98CCD62B9865AB0052EC24 /* CoreDataRecapUITests */,
+				1B98CCB72B9865AA0052EC24 /* Shop_Owner_App */,
+				1B98CCCC2B9865AB0052EC24 /* Shop_Owner_AppTests */,
+				1B98CCD62B9865AB0052EC24 /* Shop_Owner_AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,12 +316,12 @@
 /* Begin PBXTargetDependency section */
 		1B98CCCF2B9865AB0052EC24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B98CCB72B9865AA0052EC24 /* CoreDataRecap */;
+			target = 1B98CCB72B9865AA0052EC24 /* Shop_Owner_App */;
 			targetProxy = 1B98CCCE2B9865AB0052EC24 /* PBXContainerItemProxy */;
 		};
 		1B98CCD92B9865AB0052EC24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B98CCB72B9865AA0052EC24 /* CoreDataRecap */;
+			target = 1B98CCB72B9865AA0052EC24 /* Shop_Owner_App */;
 			targetProxy = 1B98CCD82B9865AB0052EC24 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -517,7 +517,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataRecap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoreDataRecap";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shop_Owner_App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shop_Owner_App";
 			};
 			name = Debug;
 		};
@@ -536,7 +536,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataRecap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoreDataRecap";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shop_Owner_App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shop_Owner_App";
 			};
 			name = Release;
 		};
@@ -577,7 +577,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B98CCB32B9865AA0052EC24 /* Build configuration list for PBXProject "CoreDataRecap" */ = {
+		1B98CCB32B9865AA0052EC24 /* Build configuration list for PBXProject "Shop_Owner_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B98CCDF2B9865AB0052EC24 /* Debug */,
@@ -586,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B98CCE12B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecap" */ = {
+		1B98CCE12B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B98CCE22B9865AB0052EC24 /* Debug */,
@@ -595,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B98CCE42B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecapTests" */ = {
+		1B98CCE42B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B98CCE52B9865AB0052EC24 /* Debug */,
@@ -604,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B98CCE72B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "CoreDataRecapUITests" */ = {
+		1B98CCE72B9865AB0052EC24 /* Build configuration list for PBXNativeTarget "Shop_Owner_AppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B98CCE82B9865AB0052EC24 /* Debug */,
