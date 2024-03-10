@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     
-    @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.83
+    @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.78
     @State var currentDragOffsetY: CGFloat = 0
     @State var endingOffsetY: CGFloat = 0
 
@@ -88,7 +88,7 @@ struct CategoriesControlView: View {
        @State private var categoryToEdit: Category?
 
        var body: some View {
-           VStack(spacing: 20) {
+           VStack(spacing: 25) {
                Image(systemName: "chevron.up").padding(.top)
                Text("Categories").font(.headline).fontWeight(.semibold)
                NavigationView {
