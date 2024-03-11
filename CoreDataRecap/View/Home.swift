@@ -99,50 +99,68 @@ struct ProductCardView: View {
     var product: Product 
     var body: some View {
         ZStack{
+            
+            
             Image(product.image ?? "placeholder image")
                 .resizable()
-//                .scaledToFill()
                 .scaledToFit()
-                .padding(.trailing,-200)
-            VStack(alignment: .leading, content: {
-                Text(product.name ?? "Starring")
-                    .font(.system(size:36,weight: .semibold))
-//                    .frame(width: 150) //reconsider this to wrap names
+            
+//            GeometryReader { geometry in
+//              Image(product.image ?? "placeholder image")
+//                .resizable()
+//                .scaledToFit()
+//                .contentMode(.aspectFit) // Explicitly reference ContentMode
+//                .frame(width: geometry.size.width, height: geometry.size.height)
+//            }
+            
+            
+            ZStack {
                 
-                Text(product.categories?.categoryName ?? "Nasz wybór")
-                    .font(.callout)
-                    .padding()
-                    .background(.white.opacity(0.5))
-                    .clipShape(Capsule())
+
                 
-                Spacer()
                 
-                HStack{
+                VStack(alignment: .leading, content: {
+                    Text(product.name ?? "Starring")
+                        .font(.system(size:36,weight: .semibold))
+                    //                    .frame(width: 180) reconsider this to wrap names
+                        .background(.white.opacity(0.5))
+                        .clipShape(Capsule())
                     
-                    Text("\(product.price) PLN")
-                        .font(.system(size: 24,weight: .semibold))
+                    Text(product.categories?.categoryName ?? "Nasz wybór")
+                        .font(.callout)
+                        .padding()
+                        .background(.white.opacity(0.5))
+                        .clipShape(Capsule())
                     
                     Spacer()
                     
-                    Button {
-                              } label: {
-                                Image(systemName: "basket")
-                                  .imageScale(.large)
-                                  .frame(width: 90, height: 69)
-                                  .background(.black)
-                                  .clipShape(Capsule())
-                                  .foregroundColor(.white)
-                              }
+                    HStack{
+                        
+                        Text("\(product.price) PLN")
+                            .font(.system(size: 24,weight: .semibold))
+                        
+                        Spacer()
+                        
+                        Button {
+                        } label: {
+                            Image(systemName: "basket")
+                                .imageScale(.large)
+                                .frame(width: 90, height: 69)
+                                .background(.black)
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                        }
+                        
+                    }
+                    .padding(.leading)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(.white.opacity(0.5))
+                    .clipShape(Capsule())
                     
-                }
-                .padding(.leading)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(.white.opacity(0.5))
-                .clipShape(Capsule())
-                
-                
-            })
+                    
+                })
+            }
         }
         .padding(30)
         .frame(width: 336,height: 422)
