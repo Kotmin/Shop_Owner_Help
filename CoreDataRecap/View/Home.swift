@@ -104,6 +104,7 @@ struct ProductCardView: View {
             Image(product.image ?? "placeholder image")
                 .resizable()
                 .scaledToFit()
+                .scaleEffect(2.5)
             
 //            GeometryReader { geometry in
 //              Image(product.image ?? "placeholder image")
