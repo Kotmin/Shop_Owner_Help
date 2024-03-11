@@ -49,15 +49,7 @@ struct CategoryControlView: View {
                        }
                        .onDelete(perform: deleteCategories)
                    }
-//                   .toolbar {
-//                       VStack{
-//                           Button("Add Categories") {
-//                               self.showingAddCategoryView = true
-//                           }
-//                           NavigationLink(destination: FullScreenCategoryView()){Text("Edit")}
-//                           
-//                       }
-//                   }
+
                }
                Spacer()
            }
@@ -137,11 +129,11 @@ struct CategoryControlView: View {
     }
 
 func updateCategory(category: Category, newName: String) {
-    category.categoryName = newName // Update the attribute
+    category.categoryName = newName
     do {
-        try viewContext.save() // Save the context
+        try viewContext.save()
     } catch {
-        // Handle error
+        print("Error decoding item array, \(error)")
     }
 }
 
@@ -154,7 +146,7 @@ private func deleteCategories(offsets: IndexSet) {
         do {
             try viewContext.save()
         } catch {
-            // Handle the error appropriately
+            print("Error decoding item array, \(error)")
         }
     }
 }

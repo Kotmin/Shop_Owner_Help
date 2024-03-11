@@ -83,6 +83,7 @@ struct ProductListView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)],
         animation: .default
     ) private var products: FetchedResults<Product>
+    
     @State private var showingAddProduct = false
 
     var body: some View {
@@ -110,12 +111,11 @@ struct ProductView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Image(product.image ?? "placeholder_image") // Replace with your placeholder image name
+            Image(product.image ?? "placeholder_image")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 175, height: 150) // Set your desired fixed frame size
+                .frame(width: 175, height: 150) 
                 .clipped() // This will clip the overflow of the image
-//                .cornerRadius(15)
                 .overlay(
                     HStack {
                         Text(product.categories?.categoryName ?? "Category")
@@ -142,52 +142,6 @@ struct ProductView: View {
     }
 }
 
-//struct AddProductView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @Binding var isPresented: Bool
-//    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)]) private var categories: FetchedResults<Category>
-//    @State private var selectedCategory: Category?
-//    @State private var productName: String = ""
-//    @State private var productPrice: Double = 0.0
-//    @State private var productImage: String = ""
-//
-//    var body: some View {
-//        NavigationView {
-//            Form {
-//                TextField("Product Name", text: $productName)
-//                TextField("Product Price", value: $productPrice, formatter: NumberFormatter())
-//                TextField("Product Image", text: $productImage)
-//                
-//                Picker("Category", selection: $selectedCategory) {
-//                    ForEach(categories) { category in
-//                        Text(category.categoryName ?? "Unknown").tag(category as Category?)
-//                    }
-//                }
-//                
-//                Button("Save") {
-//                    let newProduct = Product(context: viewContext)
-//                    newProduct.name = productName
-//                    newProduct.price = productPrice
-//                    newProduct.image = productImage
-//                    selectedCategory?.addToProducts(newProduct)
-//
-//                    newProduct.categories = selectedCategory
-//
-//                    do {
-//                        try viewContext.save()
-//                        isPresented = false
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                }
-//            }
-//            .navigationTitle("Add Product")
-//            .navigationBarItems(leading: Button("Dismiss") {
-//                isPresented = false
-//            })
-//        }
-//    }
-//}
 
 struct AddProductView: View {
     @Environment(\.managedObjectContext) private var viewContext
