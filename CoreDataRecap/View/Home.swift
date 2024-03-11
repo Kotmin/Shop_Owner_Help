@@ -128,8 +128,9 @@ struct ProductCardView: View {
                     
                     HStack{
                         
-                        Text("\(product.price) PLN")
-                            .font(.system(size: 24,weight: .semibold))
+                        Text(String(format: "%.2f PLN", product.price))
+                            .font(.system(size: 24, weight: .semibold))
+
                         
                         Spacer()
                         
