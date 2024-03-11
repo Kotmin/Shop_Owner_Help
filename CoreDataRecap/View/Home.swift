@@ -33,6 +33,8 @@ struct Home: View {
                     Image(systemName: "line.3.horizontal").imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
                 }.padding(30)
                 
+                CategoryListView
+                
                 //  QuickPurchase
                 
                 HStack{
@@ -59,6 +61,27 @@ struct Home: View {
         }
     }
     
+// 15:22
+    var CategoryListView: some View {
+        HStack{
+            ScrollView(.horizontal,showsIndicators:false) {
+                HStack {
+                    ForEach(categories) {
+                        item in Button { selectedCategory = item.categoryName ?? "Others" } label: {
+                            HStack {
+                                Text(item.categoryName!)
+                            }
+                            .padding(20)
+                            .background(selectedCategory == item.categoryName ? .black : .gray.opacity(0.1))
+                            .foregroundColor(selectedCategory != item.categoryName ? .black : .white)
+                            .clipShape(Capsule())
+                        }
+                    }
+                }
+                .padding(.horizontal,30)
+            }
+        }
+    }
     
     
 }
@@ -67,6 +90,8 @@ struct Home: View {
     #Preview {
         Home()
     }
+
+
 
 
 
