@@ -106,15 +106,6 @@ struct ProductCardView: View {
                 .scaledToFit()
                 .scaleEffect(2.5)
             
-//            GeometryReader { geometry in
-//              Image(product.image ?? "placeholder image")
-//                .resizable()
-//                .scaledToFit()
-//                .contentMode(.aspectFit) // Explicitly reference ContentMode
-//                .frame(width: geometry.size.width, height: geometry.size.height)
-//            }
-            
-            
             ZStack {
                 
 
