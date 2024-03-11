@@ -124,16 +124,15 @@ struct ProductCardView: View {
                     
                     Spacer()
                     
-                    Button{
-                        
-                    } label: {
-                        Image(Image(systemName: "basket")
-                            .imageScale(.large)
-                            .frame(width: 90, height: 69)
-                            .background(.black)
-                            .clipShape(Capsule())
-                            .foregroundColor(.white) as! ImageResource
-                    )}
+                    Button {
+                              } label: {
+                                Image(systemName: "basket")
+                                  .imageScale(.large)
+                                  .frame(width: 90, height: 69)
+                                  .background(.black)
+                                  .clipShape(Capsule())
+                                  .foregroundColor(.white)
+                              }
                     
                 }
                 .padding(.leading)
