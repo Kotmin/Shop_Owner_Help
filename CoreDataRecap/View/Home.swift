@@ -23,40 +23,47 @@ struct Home: View {
     
     
     var body: some View {
-        ScrollView{
-            VStack {
-                HStack{
-                    Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "line.3.horizontal").imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
-                }.padding(30)
-                
-                CategoryListView
-                
-                //  QuickPurchase
-                
-                HStack{
-                    Text("Szybkie **zamówienie**").font(.system(size: 24))
-                    
-                    
-                    Spacer()
-                    
-                    Image(systemName:"arrow.right").imageScale(.large)
-                }
-                .padding(.horizontal,30)
-                .padding(.vertical,15)
-                
-                ScrollView(.horizontal, showsIndicators:false){
+        NavigationStack{
+            ScrollView{
+                VStack {
                     HStack{
-                        ForEach(products) {
-                            item in ProductCardView(product: item)
+                        Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "line.3.horizontal").imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                    }.padding(30)
+                    
+                    CategoryListView
+                    
+                    //  QuickPurchase
+                    
+                    HStack{
+                        Text("Wszystkie **produkty**").font(.system(size: 24))
+                        
+                        
+                        Spacer()
+                        NavigationLink {
+                            CollectionView()
+                            
+                        } label: {
+                            Image(systemName:"arrow.right").imageScale(.large)
+                        }
+                        .foregroundColor(.black)
+                    }
+                    .padding(.horizontal,30)
+                    .padding(.vertical,15)
+                    
+                    ScrollView(.horizontal, showsIndicators:false){
+                        HStack{
+                            ForEach(products) {
+                                item in ProductCardView(product: item)
+                            }
                         }
                     }
+                    
+                    
                 }
-                
-                
             }
         }
     }
