@@ -1,11 +1,32 @@
 # ShopOwnerApp
 ## 1. Wstęp
+ShopOwnerApp to nowoczesne narzędzie dedykowane właścicielom kawiarni i podobnych miejsc usługowych, zaprojektowane z myślą o optymalizacji i ułatwieniu procesu zarządzania zamówieniami. 
 
-ShopOwnerApp to nowoczesne narzędzie dedykowane właścicielom kawiarni i podobnych miejsc usługowych, zaprojektowane z myślą o optymalizacji i ułatwieniu procesu zarządzania zamówieniami. Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje CoreData do efektywnego przechowywania danych, a jej interfejs użytkownika oparty jest na SwiftUI, co gwarantuje płynność działania i intuicyjność obsługi.
+
+Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje CoreData do efektywnego przechowywania danych, a jej interfejs użytkownika oparty jest na SwiftUI, co gwarantuje płynność działania i intuicyjność obsługi.
+
+
+### Wymagania funkcjonalne
+
+- Składanie zamówień przez klientów - Umożliwienie klientom przeglądania menu, składanie zamówień oraz śledzenie statusu zamówienia w czasie rzeczywistym.
+- Zarządzanie menu - Możliwość dodawania, edytowania, lub usuwania pozycji z menu przez właściciela, w tym aktualizacji cen i opisów produktów.
+- Zarządzanie zamówieniami - Przeglądanie bieżących zamówień, aktualizacja ich statusu i archiwizacja zakończonych zamówień przez pracowników.
+
+### Wymagania niefunkcjonalne
+
+- Wydajność - Aplikacja w edycji basic obsłuży co najmniej 250 zamówień na godzinę.
+- Dostępność - System będzie dostępny przez co najmniej 160 godzin/tydzień. Dostępność zewnętrznych funkcji obsługi płatności nie jest wliczana.
+- Skalowalność - System będzie projektowany z możliwością łatwego skalowania, aby obsłużyć wzrost liczby użytkowników i transakcji bez degradacji wydajności.
+- Bezpieczeństwo - Wszystkie dane użytkownika i transakcje będą chronione za pomocą aktualnych standardów szyfrowania, z zastosowaniem bezpiecznych protokołów komunikacyjnych.
+- Użyteczność - Interfejs użytkownika będzie intuicyjny, pozwalający na szybkie przyswojenie funkcjonalności aplikacji przez użytkowników różnych poziomów zaawansowania.
+- Kompatybilność - Aplikacja będzie kompatybilna z systemem operacyjnym iOS w wersji 17
+- Testowalność - System zostanie zaprojektowany w taki sposób, aby umożliwić łatwe wykonanie testów funkcjonalnych i niefunkcjonalnych, wspierając ciągłe doskonalenie produktu.
+
 ---
 ## 2. Podobne rozwiązania na rynku
 
-Na rynku istnieją podobne rozwiązania, takie jak przyszne.pl czy Glovo, które umożliwiają zamawianie jedzenia online. ShopOwnerApp wyróżnia się jednak skupieniem na procesie zarządzania kawiarnią, oferując narzędzia nie tylko do przyjmowania zamówień, ale również do ich efektywnego przetwarzania i monitorowania w czasie rzeczywistym.
+Na rynku istnieją podobne rozwiązania, takie jak pyszne.pl czy Glovo, które umożliwiają zamawianie jedzenia online. ShopOwnerApp wyróżnia się jednak skupieniem na procesie zarządzania kawiarnią, oferując narzędzia nie tylko do przyjmowania zamówień, ale również do ich efektywnego przetwarzania i monitorowania w czasie rzeczywistym.
+
 ---
 ## 3. Dla kogo jest ta aplikacja?
 
@@ -16,11 +37,11 @@ ShopOwnerApp jest skierowana do właścicieli i zarządców kawiarni, którzy po
 
 ShopOwnerApp oferuje szereg funkcjonalności i widoków, ułatwiających zarządzanie kawiarnią:
 
-    - Składanie zamówień: Prosty i intuicyjny interfejs umożliwiający klientom składanie zamówień z menu.
-    - Przegląd menu: Możliwość przeglądania dostępnego menu oraz aktualizacji oferty w czasie rzeczywistym.
-    - Szybkie zamówienie: Funkcja umożliwiająca stałym klientom ponowne składanie zamówień w sposób szybki i wygodny.
-    - Nawigacja: Intuicyjna nawigacja po aplikacji, ułatwiająca dostęp do najważniejszych funkcji.
-    - Panel właściciela: Panel zarządzania umożliwiający monitorowanie i zarządzanie zamówieniami, a także dostęp do statystyk i analiz sprzedaży.
+- Składanie zamówień: Prosty i intuicyjny interfejs umożliwiający klientom składanie zamówień z menu.
+- Przegląd menu: Możliwość przeglądania dostępnego menu oraz aktualizacji oferty w czasie rzeczywistym.
+- Szybkie zamówienie: Funkcja umożliwiająca stałym klientom ponowne składanie zamówień w sposób szybki i wygodny.
+- Nawigacja: Intuicyjna nawigacja po aplikacji, ułatwiająca dostęp do najważniejszych funkcji.
+- Panel właściciela: Panel zarządzania umożliwiający monitorowanie i zarządzanie zamówieniami, a także dostęp do statystyk i analiz sprzedaży.
 
 ---
     
@@ -66,7 +87,7 @@ Projekt interfejsu użytkownika został opracowany z myślą o maksymalnej intui
 ## 6. Projekt Bazy Danych
 
 CoreData jest wykorzystywana do przechowywania wszystkich niezbędnych danych aplikacji, takich jak szczegóły zamówień, informacje o menu oraz dane klientów. Struktura bazy danych została zaprojektowana w taki sposób, aby zapewnić szybki dostęp do danych i ich bezpieczeństwo.
-## 7. Features
+## 7. Funkcjonalności
 
 ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji:
 
