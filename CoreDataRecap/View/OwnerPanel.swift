@@ -202,6 +202,8 @@ struct AddProductView: View {
     }
 }
 
+
+
 extension NSManagedObjectContext {
     func fetchAllCategories() -> [Category] {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
