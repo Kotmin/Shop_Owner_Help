@@ -65,7 +65,7 @@ struct CategoryControlView: View {
        }
 
        private var addCategoryView: some View {
-           NavigationView {
+           NavigationStack {
                VStack {
                    TextField("New Category Name", text: $newCategoryName)
                        .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -89,7 +89,7 @@ struct CategoryControlView: View {
        }
 
        private var updateCategoryView: some View {
-           NavigationView {
+           NavigationStack {
                VStack {
                    TextField("Update Category Name", text: $newName)
                        .textFieldStyle(RoundedBorderTextFieldStyle())

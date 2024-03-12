@@ -21,38 +21,39 @@ struct CollectionView: View {
     
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             
-        ScrollView{
-            VStack {
-                HStack{
-                    Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                       dismiss() // Dismiss the current view
-                    }){
-                    Image(systemName: "arrow.left")
-                    }
-                            .imageScale(.large)
-                            .padding()
-                            .foregroundColor(.black)
-                            .frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
-                }.padding(30)
-                
-                
+        
                 VStack {
-
-                    
-                    LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]) {
-                        ForEach(products){
-                            item in SmallProductCard(product: item)
+                    HStack{
+                        Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            dismiss() // Dismiss the current view
+                            
+                        }){
+                            Image(systemName: "arrow.left")
                         }
+                        .imageScale(.large)
+                        .padding()
+                        .foregroundColor(.black)
+                        .frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                    }.padding(30)
+                    
+                    ScrollView{
+                    VStack {
+                        
+                        
+                        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]) {
+                            ForEach(products){
+                                item in SmallProductCard(product: item)
+                            }
+                        }
+                        
                     }
-                   
                 }
-            }
         }
         }.navigationBarBackButtonHidden(true)
     }

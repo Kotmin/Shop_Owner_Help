@@ -30,8 +30,15 @@ struct Home: View {
                         Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
                         
                         Spacer()
-                        
-                        Image(systemName: "line.3.horizontal").imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                        NavigationLink {
+                            OwnerPanel()
+                            
+                        } label: {
+                            Image(systemName: "line.3.horizontal")
+                        }
+                        .foregroundColor(.black
+                        )
+                        .imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
                     }.padding(30)
                     
                     CategoryListView
@@ -39,7 +46,7 @@ struct Home: View {
                     //  QuickPurchase
                     
                     HStack{
-                        Text("Wszystkie **produkty**").font(.system(size: 24))
+                        Text("Inne **produkty**").font(.system(size: 24))
                         
                         
                         Spacer()
@@ -119,7 +126,7 @@ struct ProductCardView: View {
                 
                 
                 VStack(alignment: .leading, content: {
-                    Text(product.name ?? "Starring")
+                    Text(" \(product.name ?? "Starring") ")
                         .font(.system(size:36,weight: .semibold))
                     //                    .frame(width: 180) reconsider this to wrap names
                         .background(.white.opacity(0.5))

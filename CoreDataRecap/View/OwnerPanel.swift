@@ -18,7 +18,7 @@ struct OwnerPanel: View {
             
       
         ZStack{
-            Color.green.ignoresSafeArea()
+            Color.green.opacity(0.4).ignoresSafeArea()
             VStack{
                 Text("Owner Panel").font(.headline).fontWeight(.semibold)
                     .padding(9)
@@ -119,7 +119,7 @@ struct ProductView: View {
                     .padding([.top, .leading]), alignment: .topLeading
                 )
 
-            Text(product.name ?? "Unnamed Product")
+            Text(" \(product.name ?? "Unnamed Product")")
                 .bold()
             Text("$\(product.price, specifier: "%.2f")")
                 .foregroundColor(.secondary).padding(.leading)
@@ -144,7 +144,7 @@ struct AddProductView: View {
     @State private var isPriceValid: Bool = true
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 TextField("Product Name", text: $productName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
