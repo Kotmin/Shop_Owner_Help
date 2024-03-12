@@ -1,6 +1,6 @@
 //
 //  CollectionView.swift
-//  CoreDataRecap
+//  ShopOwnerApp
 //
 //  Created by Paweł Jan Tłusty on 07/03/2024.
 //
@@ -12,6 +12,8 @@ struct CollectionView: View {
     @Environment(\.presentationMode) var mode
     
     @Environment(\.dismiss) private var dismiss
+    
+    @EnvironmentObject var appState: AppState
     
     
     @FetchRequest(
@@ -32,6 +34,7 @@ struct CollectionView: View {
                         
                         Button(action: {
                             dismiss() // Dismiss the current view
+//                            appState.selectedTab = .home
                             
                         }){
                             Image(systemName: "arrow.left")

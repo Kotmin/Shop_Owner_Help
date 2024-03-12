@@ -1,6 +1,6 @@
 //
 //  CategoryControlView.swift
-//  CoreDataRecap
+//  ShopOwnerApp
 //
 //  Created by Paweł Jan Tłusty on 10/03/2024.
 //

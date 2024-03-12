@@ -1,12 +1,13 @@
 //
 //  Home.swift
-//  CoreDataRecap
+//  ShopOwnerApp
 //
 //  Created by Paweł Jan Tłusty on 07/03/2024.
 //
 
 import SwiftUI
 import CoreData
+
 
 struct Home: View {
     @Environment(\.managedObjectContext) private var viewContext
