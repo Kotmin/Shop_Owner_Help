@@ -6,12 +6,41 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapsView: View {
+    
+    @State private var cameraPosition: MapCameraPosition = .region(.userRegion)
+    
     var body: some View {
-        Text("Navigation")
+        Map(position: $cameraPosition){
+            Marker("My location",systemImage: "paperplane", coordinate: .userLocation)
+        }
+        .mapControls {
+                    MapPitchToggle()
+                    MapCompass()
+                    MapUserLocationButton()
+                }
     }
 }
+
+extension CLLocationCoordinate2D {
+    static var userLocation: CLLocationCoordinate2D {
+        return .init(latitude: 51.235388, longitude: 22.553094)
+    }
+}
+//51.235388,22.553094 Pentagon lat lon
+
+extension MKCoordinateRegion {
+    static var userRegion: MKCoordinateRegion {
+        return .init(center: .userLocation,
+        latitudinalMeters: 1000,
+        longitudinalMeters: 1000
+        )
+    }
+}
+
+
 
 #Preview {
     MapsView()
