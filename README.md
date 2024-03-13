@@ -2,6 +2,13 @@
 ## 1. Wstęp
 ShopOwnerApp to nowoczesne narzędzie dedykowane właścicielom kawiarni i podobnych miejsc usługowych, zaprojektowane z myślą o optymalizacji i ułatwieniu procesu zarządzania zamówieniami. 
 
+<!-- ![Preview](https://github.com/Kotmin/Shop_Owner_Help/blob/main/ios_shop_ui.gif) -->
+
+
+<p align="center">
+  <img src="https://github.com/Kotmin/Shop_Owner_Help/blob/main/ios_shop_ui.gif" width="720" height="480">
+</p>
+
 
 Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje CoreData do efektywnego przechowywania danych, a jej interfejs użytkownika oparty jest na SwiftUI, co gwarantuje płynność działania i intuicyjność obsługi.
 
@@ -15,7 +22,7 @@ Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje C
 ### Wymagania niefunkcjonalne
 
 - Wydajność - Aplikacja w edycji basic obsłuży co najmniej 250 zamówień na godzinę.
-- Dostępność - System będzie dostępny przez co najmniej 160 godzin/tydzień. Dostępność zewnętrznych funkcji obsługi płatności nie jest wliczana.
+- Dostępność - System będzie dostępny przez co najmniej 160 godzin / tydzień. Dostępność zewnętrznych funkcji obsługi płatności nie jest wliczana.
 - Skalowalność - System będzie projektowany z możliwością łatwego skalowania, aby obsłużyć wzrost liczby użytkowników i transakcji bez degradacji wydajności.
 - Bezpieczeństwo - Wszystkie dane użytkownika i transakcje będą chronione za pomocą aktualnych standardów szyfrowania, z zastosowaniem bezpiecznych protokołów komunikacyjnych.
 - Użyteczność - Interfejs użytkownika będzie intuicyjny, pozwalający na szybkie przyswojenie funkcjonalności aplikacji przez użytkowników różnych poziomów zaawansowania.
@@ -26,6 +33,14 @@ Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje C
 ## 2. Podobne rozwiązania na rynku
 
 Na rynku istnieją podobne rozwiązania, takie jak pyszne.pl czy Glovo, które umożliwiają zamawianie jedzenia online. ShopOwnerApp wyróżnia się jednak skupieniem na procesie zarządzania kawiarnią, oferując narzędzia nie tylko do przyjmowania zamówień, ale również do ich efektywnego przetwarzania i monitorowania w czasie rzeczywistym.
+
+<div align="center">
+  <img src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/7250f679-026f-4be4-8e9a-3f5f961aa844" alt="obraz" style="margin: 10px;">
+  <img src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/05e4d1a2-b010-454c-ab60-72cd5108f639" alt="obraz" style="margin: 10px;">
+  <img src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/8fec2518-adcb-44d9-8c11-9a2bea8015c7" alt="obraz" style="margin: 10px;">
+</div>
+
+
 
 ---
 ## 3. Dla kogo jest ta aplikacja?
@@ -46,7 +61,7 @@ ShopOwnerApp oferuje szereg funkcjonalności i widoków, ułatwiających zarząd
 ---
     
 ## 5. Projekt UI
-### Przykłady realizacji
+### Pierwszy szkic interfejsu
 <!--- 
 ![obraz](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/d66f6906-42fd-4ad9-ad12-e8365d622440)
 -->
@@ -86,7 +101,19 @@ ShopOwnerApp oferuje szereg funkcjonalności i widoków, ułatwiających zarząd
 Projekt interfejsu użytkownika został opracowany z myślą o maksymalnej intuicyjności i estetyce. Wykorzystanie SwiftUI zapewnia płynne i szybkie działanie aplikacji, a także umożliwia łatwe dostosowanie layoutu do indywidualnych potrzeb użytkownika.
 ## 6. Projekt Bazy Danych
 
+
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/36feee13-88fe-49f6-bd8d-3a5849913815">
+</p>
+
 CoreData jest wykorzystywana do przechowywania wszystkich niezbędnych danych aplikacji, takich jak szczegóły zamówień, informacje o menu oraz dane klientów. Struktura bazy danych została zaprojektowana w taki sposób, aby zapewnić szybki dostęp do danych i ich bezpieczeństwo.
+
+
+### Funkcja encji MetaData
+Wierząc w dalszy rozwój i kształtowanie tej aplikacji postawiliśmy na uniwersalną encję umożliwiającą dodawanie specyficznych dla produktu/usługi danych. Takich jak m.in. opis, dodatkowe zdjęcia, czy tabela wartości odżywczych
+
 ## 7. Funkcjonalności
 
 ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji:
@@ -100,7 +127,7 @@ ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji
 
 ## 8. Testowanie
 
-Aplikacja została poddana szczegółowym testom, zarówno pod kątem funkcjonalności, jak i wydajności, aby zapewnić bezproblemowe i stabilne działanie.
+Aplikacja została poddana szczegółowym testom, zarówno pod kątem funkcjonalności, jak i wydajności, aby zapewnić bezproblemowe i stabilne działanie. Obecnie produkt jest w fazie prototypowania, co implikuje możliwość pojawienia się błędów. Gorąco zachęcamy do wspierania tego projektu poprzez zgłaszanie bugów w zakładce Issues.
 
 ---
 ## 9. Dalsze plany
