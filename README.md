@@ -2,6 +2,13 @@
 ## 1. Wstęp
 ShopOwnerApp to nowoczesne narzędzie dedykowane właścicielom kawiarni i podobnych miejsc usługowych, zaprojektowane z myślą o optymalizacji i ułatwieniu procesu zarządzania zamówieniami. 
 
+<!-- ![Preview](https://github.com/Kotmin/Shop_Owner_Help/blob/main/ios_shop_ui.gif) -->
+
+
+<p align="center">
+  <img src="https://github.com/Kotmin/Shop_Owner_Help/blob/main/ios_shop_ui.gif" width="720" height="480">
+</p>
+
 
 Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje CoreData do efektywnego przechowywania danych, a jej interfejs użytkownika oparty jest na SwiftUI, co gwarantuje płynność działania i intuicyjność obsługi.
 
