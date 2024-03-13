@@ -75,7 +75,7 @@ ShopOwnerApp oferuje szereg funkcjonalności i widoków, ułatwiających zarząd
 |![Menu Właściciela](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/73ee91f1-de9d-40c5-b9a1-dd3d7cc599eb)|![Ekran główny użytkownika](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/be6fe716-611c-4085-812c-7b23149aba72)|![Aktualizacja kategorii produktu](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/cb6ba1d4-54a2-41fb-89c3-b3631040cf2f)|
 -->
 
-|![Menu Właściciela](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/73ee91f1-de9d-40c5-b9a1-dd3d7cc599eb)|![Ekran główny użytkownika](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/be6fe716-611c-4085-812c-7b23149aba72)|![obraz](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/74bbc870-1be4-44b1-a628-b0b8c2ee67f2)|
+|![Menu Właściciela](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/73ee91f1-de9d-40c5-b9a1-dd3d7cc599eb)|![Ekran główny użytkownika](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/ec0d01ca-f0ac-4453-aa35-dc5d5a22f120)|![obraz](https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/74bbc870-1be4-44b1-a628-b0b8c2ee67f2)|
 |:----------------:|:------------------------:|:-------------------------------:|
 | Menu Właściciela | Ekran główny użytkownika | Wysuwane menu zarządzania kategoriami |
 
