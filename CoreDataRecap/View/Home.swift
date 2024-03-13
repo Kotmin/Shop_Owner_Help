@@ -11,72 +11,54 @@ import CoreData
 
 struct Home: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
-    
+
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
-    
+
     @State var selectedCategory = ""
-    
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)],
-        animation: .default
-    ) private var products: FetchedResults<Product>
-    
-    
+    @StateObject private var productVM = ProductViewModel(context: PersistenceController.shared.container.viewContext)
+
     var body: some View {
-        NavigationStack{
-            ScrollView{
+        NavigationStack {
+            ScrollView {
                 VStack {
-                    HStack{
+                    HStack {
                         Text("Zamów w najlepszej **kawiarni**").font(.system(size: 30)).padding(.trailing)
-                        
                         Spacer()
                         NavigationLink {
                             OwnerPanel()
-                            
                         } label: {
                             Image(systemName: "line.3.horizontal")
                         }
-                        .foregroundColor(.black
-                        )
-                        .imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                        .foregroundColor(.black)
+                        .imageScale(.large).padding().frame(width: 70, height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
                     }.padding(30)
-                }
+
                     CategoryListView
-                    
-                    //  QuickPurchase
-                    
-                    HStack{
+
+                    HStack {
                         Text("Inne **produkty**").font(.system(size: 24))
-                        
-                        
                         Spacer()
                         NavigationLink {
                             CollectionView()
-                            
                         } label: {
-                            Image(systemName:"arrow.right").imageScale(.large)
+                            Image(systemName: "arrow.right").imageScale(.large)
                         }
                         .foregroundColor(.black)
                     }
-                    .padding(.horizontal,30)
-                    .padding(.vertical,15)
-                    
-                    ScrollView(.horizontal, showsIndicators:false){
-                        HStack{
-                            ForEach(products) {
-                                item in ProductCardView(product: item)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 15)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(productVM.products, id: \.self) { product in
+                                ProductCardView(product: product)
                             }
                         }
                     }
-                    
-                    
                 }
-            
+            }
         }
     }
-    
 
     var CategoryListView: some View {
         HStack{
