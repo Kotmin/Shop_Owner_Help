@@ -41,7 +41,7 @@ struct Home: View {
                         )
                         .imageScale(.large).padding().frame(width: 70,height: 90).overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
                     }.padding(30)
-                    
+                }
                     CategoryListView
                     
                     //  QuickPurchase
@@ -72,7 +72,7 @@ struct Home: View {
                     
                     
                 }
-            }
+            
         }
     }
     
