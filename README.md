@@ -86,6 +86,13 @@ ShopOwnerApp oferuje szereg funkcjonalności i widoków, ułatwiających zarząd
 Projekt interfejsu użytkownika został opracowany z myślą o maksymalnej intuicyjności i estetyce. Wykorzystanie SwiftUI zapewnia płynne i szybkie działanie aplikacji, a także umożliwia łatwe dostosowanie layoutu do indywidualnych potrzeb użytkownika.
 ## 6. Projekt Bazy Danych
 
+
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/36feee13-88fe-49f6-bd8d-3a5849913815">
+</p>
+
 CoreData jest wykorzystywana do przechowywania wszystkich niezbędnych danych aplikacji, takich jak szczegóły zamówień, informacje o menu oraz dane klientów. Struktura bazy danych została zaprojektowana w taki sposób, aby zapewnić szybki dostęp do danych i ich bezpieczeństwo.
 ## 7. Funkcjonalności
 
