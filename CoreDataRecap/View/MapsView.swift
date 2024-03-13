@@ -31,6 +31,8 @@ extension CLLocationCoordinate2D {
 }
 //51.235388,22.553094 Pentagon lat lon
 
+// 51.247020,22.553271 Cafe Heca lat lon
+
 extension MKCoordinateRegion {
     static var userRegion: MKCoordinateRegion {
         return .init(center: .userLocation,
