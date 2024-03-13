@@ -24,6 +24,12 @@ struct MapsView: View {
     @State private var route: MKRoute?
     
     var body: some View {
+        ZStack{
+            
+            VStack{
+                Text("**Mapa**").font(.system(size: 30))
+                
+           
         Map(position: $cameraPosition,selection: $mapSelection){
 //            Marker("My location",systemImage: "paperplane", coordinate: .userLocation)
             
@@ -51,6 +57,11 @@ struct MapsView: View {
                     MapCompass()
                     MapUserLocationButton()
                 }
+            }
+            .edgesIgnoringSafeArea(.bottom)
+//            .frame(height: UIScreen.main.bounds.height * 0.8)
+            
+        }
     }
     
     func searchPlaces() async {
