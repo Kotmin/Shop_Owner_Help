@@ -14,6 +14,7 @@ struct Home: View {
     
     
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.categoryName, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+    
     @State var selectedCategory = ""
     
     
@@ -76,7 +77,7 @@ struct Home: View {
         }
     }
     
-// 15:22
+
     var CategoryListView: some View {
         HStack{
             ScrollView(.horizontal,showsIndicators:false) {

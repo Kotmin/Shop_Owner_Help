@@ -16,6 +16,8 @@ struct OwnerPanel: View {
     @State var currentDragOffsetY: CGFloat = 0
     @State var endingOffsetY: CGFloat = 0
     
+    @State private var refreshToggle: Bool = false
+    
     var body: some View {
         NavigationStack {
             
@@ -54,6 +56,7 @@ struct OwnerPanel: View {
                                     endingOffsetY = 0
                                 }
                                 currentDragOffsetY = 0
+                                refreshToggle.toggle()
                             }
                         }
             )
@@ -193,8 +196,6 @@ struct ProductListView: View {
     @State private var showingUpdateProductSheet = false
     @State private var selectedProduct: Product?
     
-    @State private var refreshToggle: Bool = false
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -237,12 +238,11 @@ struct ProductListView: View {
                 self.selectedProduct = nil
             }) {
                 if let productToUpdate = selectedProduct {
+
                     UpdateProductView(isPresented: $showingUpdateProductSheet, product: productToUpdate)
                 }
             }
         }
-        Text("Refresh").hidden().opacity(refreshToggle ? 0 : 1)
-
     }
     
     private func deleteProduct(_ product: Product) {
