@@ -73,34 +73,6 @@ struct OwnerPanel: View {
 
 
 
-//struct ProductListView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)],
-//        animation: .default
-//    ) private var products: FetchedResults<Product>
-//    
-//    @State private var showingAddProduct = false
-//
-//    var body: some View {
-//        ScrollView {
-//            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-//                ForEach(products) { product in
-//                    ProductView(product: product)
-//                }
-//            }
-//        }
-//        .sheet(isPresented: $showingAddProduct) {
-//            AddProductView(isPresented: $showingAddProduct)
-//        }
-//        .navigationBarItems(trailing: Button(action: {
-//            showingAddProduct = true
-//        }) {
-//            Text("Add Product")
-//        })
-//    }
-//}
-
 class ProductViewModel: ObservableObject {
     @Published var products: [Product] = []
     private var viewContext: NSManagedObjectContext
@@ -127,65 +99,7 @@ class ProductViewModel: ObservableObject {
         }
     }
 }
-//
-//struct ProductListView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @StateObject private var productVM = ProductViewModel(context: PersistenceController.shared.container.viewContext)
-//    
-//    @State private var showingAddProduct = false
-//    @State private var showingUpdateProductView = false
-//    @State private var selectedProduct: Product?
-//    
-//    var body: some View {
-//        ScrollView {
-//            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-//                ForEach(productVM.products, id: \.self) { product in
-//                    ProductView(product: product)
-//                        .onTapGesture {
-//                            self.selectedProduct = product
-//                            self.showingUpdateProductView = true
-//                        }
-//                        .contextMenu {
-//                            Button(action: {
-//                                self.selectedProduct = product
-//                                self.showingUpdateProductView = true
-//                            }) {
-//                                Label("Edit", systemImage: "pencil")
-//                            }
-//                            Button(action: {
-//                                deleteProduct(product)
-//                            }) {
-//                                Label("Remove", systemImage: "trash")
-//                            }
-//                            Button(action: {}) {
-//                                Label("Close", systemImage: "xmark")
-//                            }
-//                        }
-//                }
-//            }
-//        }
-//        .sheet(isPresented: $showingAddProduct) {
-//            AddProductView(isPresented: $showingAddProduct)
-//        }
-//        .sheet(isPresented: $showingUpdateProductView, onDismiss: {
-//            self.selectedProduct = nil
-//        }) {
-//            if let selectedProduct = selectedProduct {
-//                UpdateProductView(product: selectedProduct)
-//            }
-//        }
-//        .navigationBarItems(trailing: Button(action: {
-//            showingAddProduct = true
-//        }) {
-//            Text("Add Product")
-//        })
-//    }
-//    
-//    private func deleteProduct(_ product: Product) {
-//        viewContext.delete(product)
-//        try? viewContext.save()
-//    }
-//}
+
 
 
 struct ProductListView: View {
@@ -272,7 +186,7 @@ struct ProductView: View {
                         Text(product.categories?.categoryName ?? "Category")
                             .font(.caption)
                             .padding(5)
-                            .background(Color.blue) // Set your desired background color
+                            .background(Color.blue) // Set background color
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                         Spacer()
@@ -289,14 +203,7 @@ struct ProductView: View {
         .frame(width: 175, height: 200)
         .background(Color.white)
         .cornerRadius(15)
-//        .onTapGesture {
-//            self.showingActionSheet = true
-//        }
-//        .onLongPressGesture {
-//            activeProduct = product
-//            self.showingActionSheet = true
-//        }
-        // handle gestures for update and delete
+
     }
 }
 
