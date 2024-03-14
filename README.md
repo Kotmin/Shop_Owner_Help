@@ -12,6 +12,16 @@ ShopOwnerApp to nowoczesne narzędzie dedykowane właścicielom kawiarni i podob
 
 Aplikacja, stworzona wyłącznie dla systemu iOS 17 lub nowszego, wykorzystuje CoreData do efektywnego przechowywania danych, a jej interfejs użytkownika oparty jest na SwiftUI, co gwarantuje płynność działania i intuicyjność obsługi.
 
+---
+#### Osoby realizujące:
+ 1.Paweł Jan Tłusty
+
+
+#### Podział zadań:
+100% zadań wykonane zostało przez Paweł Jan Tłusty
+
+---
+
 
 ### Wymagania funkcjonalne
 
