@@ -7,48 +7,6 @@
 
 import SwiftUI
 
-//struct DetailedProductView: View {
-//    let product: Product
-//    @State var modifyPermission = true // just for Debugging
-//    
-//    @Environment(\.dismiss) private var dismiss
-//
-//    var body: some View {
-//        VStack {
-//            Text(product.name ?? "Unnamed Product")
-//            
-//            if let imageName = product.image, let image = UIImage(named: imageName) {
-//                Image(uiImage: image)
-//                    .resizable()
-//                    .scaledToFit()
-//            }
-//
-//            if modifyPermission {
-//                HStack {
-//                    Button("Edit") {
-//                        // Logic to edit
-//                    }
-//                    .foregroundColor(.white)
-//                    .background(Color.black)
-//                    .clipShape(Rectangle())
-//
-//                    Button("Delete") {
-//                        // Logic to delete
-//                    }
-//                    .foregroundColor(.white)
-//                    .background(Color.red)
-//                    .clipShape(Rectangle())
-//                }
-//            }
-//
-//            Button("Return") {
-//                dismiss()
-//            }
-//        }
-//    }
-//}
-
-
 
 struct DetailedProductView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -107,7 +65,7 @@ struct DetailedProductView: View {
     }
 }
 
-//
-//#Preview {
-//    DetailedProductView()
-//}
+
+#Preview {
+   DetailedProductView()
+}
