@@ -23,10 +23,7 @@ struct ContentView: View {
     
 
 
-//    var body: some View {
-////        OwnerPanel()
-////        Home()
-//    }
+
     
     var body: some View {
         NavigationStack{
@@ -44,7 +41,7 @@ struct ContentView: View {
                     }
                     .tag(Tab.home)
                 
-                MapsView() // Assuming this is a placeholder for your navigation view
+                MapsView()
                     .tabItem {
                         Label("Navigation", systemImage: "map")
                     }
