@@ -25,7 +25,7 @@ struct DetailedProductView: View {
                     .scaledToFit()
                     .frame(height: 200)
             } else {
-                Image("placeholder_image") // Assuming a placeholder image exists
+                Image("placeholder_image")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
@@ -35,6 +35,7 @@ struct DetailedProductView: View {
                 HStack {
                     Button("Edit") {
                         // Handle edit action
+                        // this can be redundant/ unnesersacy from this scope (this is direct acces for view from client side)
                     }
                     .foregroundColor(.white)
                     .padding()
