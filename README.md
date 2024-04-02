@@ -133,6 +133,22 @@ ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji
   - **Powiadomienia**: Automatyczne powiadomienia dla klientów o statusie ich zamówienia.
   - **Wsparcie dla wielu urządzeń**: Synchronizacja danych między urządzeniami pracowników.
 
+### 7.1 Przykładowy diagram BPMN
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/370aa5d8-87dd-450e-9d1e-e0a540616352">
+</p>
+
+
+### 7.2 Przykładowy diagram UseCafe
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/2fc7dfb7-1a21-4899-81d5-e33b00bad932">
+</p>
+
+
 ---
 
 ## 8. Testowanie
