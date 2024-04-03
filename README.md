@@ -139,6 +139,13 @@ ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji
 <p align="center">
   <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/370aa5d8-87dd-450e-9d1e-e0a540616352">
 </p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy właściciela: Dodanie pozycji</p>
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/4a367178-cf24-471c-a695-e5abb6f03d2e">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy: Dodanie zamówienia</p>
 
 
 ### 7.2 Przykładowy diagram UseCafe
