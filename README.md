@@ -159,9 +159,19 @@ ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji
 </p>
 <p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy: Aktualizacja statusu zamówienia</p>
 
+### Przykładowy diagram DFD
+### Diagram kontekstowy
 
 
-### 7.2 Przykładowy diagram UseCafe
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/5a46aec6-00b3-44c3-b213-4b36c1601fb3">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Diagram kontekstow wykonany w darmowej wersji Visual Paradigm. Niestety nie udostępniają większej ilości oznaczeń, czy prostej nawigacji bez zalogowania / w darmowej wersji</p>
+
+
+### 7.3 Przykładowy diagram UseCafe
 
 
 <p align="center">
