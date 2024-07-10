@@ -133,6 +133,52 @@ ShopOwnerApp oferuje szereg funkcji, które wyróżniają ją na tle konkurencji
   - **Powiadomienia**: Automatyczne powiadomienia dla klientów o statusie ich zamówienia.
   - **Wsparcie dla wielu urządzeń**: Synchronizacja danych między urządzeniami pracowników.
 
+### 7.1 Przykładowy diagram BPMN
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/370aa5d8-87dd-450e-9d1e-e0a540616352">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy właściciela: Dodanie pozycji</p>
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/4a367178-cf24-471c-a695-e5abb6f03d2e">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy: Dodanie zamówienia</p>
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/4ffb0752-3a96-4156-bf5e-7084ed9bb754">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy: Zarządzanie menu</p>
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/72607e4e-518d-4332-99d6-29a8139407c3">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Proces biznesowy: Aktualizacja statusu zamówienia</p>
+
+### Przykładowy diagram DFD
+### Diagram kontekstowy
+
+
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/5a46aec6-00b3-44c3-b213-4b36c1601fb3">
+</p>
+<p align="center" style="font-size:smaller; font-style:italic;">Diagram kontekstow wykonany w darmowej wersji Visual Paradigm. Niestety nie udostępniają większej ilości oznaczeń, czy prostej nawigacji bez zalogowania / w darmowej wersji</p>
+
+
+### 7.3 Przykładowy diagram UseCafe
+
+
+<p align="center">
+  <img width="709" alt="db_schema_default" src="https://github.com/Kotmin/Shop_Owner_Help/assets/70173732/2fc7dfb7-1a21-4899-81d5-e33b00bad932">
+</p>
+
+
 ---
 
 ## 8. Testowanie
